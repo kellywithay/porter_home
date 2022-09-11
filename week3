@@ -1,0 +1,112 @@
+//*NEW* Added variables for Week 3
+int windowOff = 240;
+int windowOn = 240;
+
+void setup() {
+
+  //set frameRate
+  frameRate(30);
+
+  //background
+  size(500, 500);
+  background(#08C7FA);
+
+  //grass
+  fill(#00B40A);
+  rect(0, 460, 500, 40);
+
+  //*NEW* set rect mode
+  rectMode(CORNERS);
+
+  //left tree
+  fill(#673601);
+  rect(40, 320, 80, 460);
+  fill(#00B40A);
+  ellipseMode(CENTER);
+  ellipse(60, 280, 100, 100);
+
+  //right tree
+  fill(#673601);
+  rect(420, 320, 460, 460);
+  fill(#00B40A);
+  ellipseMode(CENTER);
+  ellipse(440, 280, 100, 100);
+
+  //house
+  fill(#F0DE16);
+  rect(120, 220, 380, 460);
+
+  //*NEW* Using int variable
+  //*NEW* Changed windowOff color
+  //windows
+  fill(#9B9B9B);
+  //top-left
+  rect(140, windowOff, 200, 320);
+  //top-middle
+  rect(220, windowOff, 280, 320);
+  //top-right
+  rect(300, windowOff, 360, 320);
+  //*NEW* change int window
+  windowOff = windowOff + 100;
+  //bottom-left
+  rect(140, windowOff, 200, 420);
+  //bottom-right
+  rect(300, windowOff, 360, 420);
+
+  //roof
+  fill(#FC2200);
+  triangle(250, 120, 80, 220, 420, 220);
+
+  //door
+  fill(#FC2200);
+  rect(220, 340, 280, 460);
+
+  //left-clouds
+  noStroke();
+  fill(255);
+  ellipseMode(CORNERS);
+  ellipse(30, 70, 100, 100);
+  ellipse(70, 50, 150, 80);
+  ellipse(90, 70, 200, 100);
+
+  //middle-clouds
+  noStroke();
+  fill(255);
+  ellipseMode(CORNERS);
+  ellipse(200, 40, 280, 80);
+  ellipse(250, 50, 320, 90);
+  ellipse(300, 30, 380, 80);
+
+  //sun
+  fill(#FF7D03);
+  ellipseMode(CENTER);
+  ellipse(440, 70, 100, 100);
+}
+
+void draw() {
+}
+
+//*NEW* Mouse action added for Week 3
+void mousePressed () {
+
+  //*NEW* windowOn color
+  //windows
+  fill(#E177F0);
+  //top-left
+  rect(140, windowOn, 200, 320);
+  //top-middle
+  rect(220, windowOn, 280, 320);
+  //top-right
+  rect(300, windowOn, 360, 320);
+
+  //*NEW* change int window
+  windowOn = windowOn + 100;
+
+  //bottom-left
+  rect(140, windowOn, 200, 420);
+  //bottom-right
+  rect(300, windowOn, 360, 420);
+
+  //*NEW* reset int window to avoid multiple windows
+  windowOn = 240;
+}
